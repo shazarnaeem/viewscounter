@@ -18,6 +18,8 @@ RUN CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d. -f1) &
     CHROMEDRIVER_VERSION=$(wget -qO- https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION) && \
     wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip && \
     unzip /tmp/chromedriver.zip -d /tmp/ && \
+    echo "==== /tmp contents ====" && ls -l /tmp/ && \
+    echo "==== /tmp/chromedriver-linux64 contents ====" && ls -l /tmp/chromedriver-linux64 || true && \
     if [ -f /tmp/chromedriver-linux64/chromedriver ]; then \
         mv /tmp/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver; \
     else \
