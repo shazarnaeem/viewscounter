@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 import time
 from datetime import datetime, timedelta
 
@@ -21,7 +22,8 @@ end_time = datetime.now() + timedelta(hours=6)
 
 while datetime.now() < end_time:
     print(f"Opening {url}")
-    driver = webdriver.Chrome(executable_path=driver_path, options=chrome_options)
+    service = Service(driver_path)
+    driver = webdriver.Chrome(service=service, options=chrome_options)
     driver.get(url)
     # Video ko 1 minute tak play hone dein
     time.sleep(60)
