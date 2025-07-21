@@ -32,4 +32,4 @@ while datetime.now() < end_time:
     # 10 seconds ka break (optional)
     time.sleep(10)
 
-print("6 ghante complete ho gaye. Script band ho gayi.") 
+print("6 ghante complete ho gaye. Script band ho gayi.")
