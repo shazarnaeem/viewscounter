@@ -13,9 +13,9 @@ RUN apt-get update && \
     && echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge.list \
     && apt-get update && apt-get install -y microsoft-edge-stable
 
-# Chrome for Testing - always compatible ChromeDriver
-RUN wget -O /tmp/chrome-linux64.zip https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/latest/linux64/chrome-linux64.zip && \
-    wget -O /tmp/chromedriver-linux64.zip https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/latest/linux64/chromedriver-linux64.zip && \
+# Chrome for Testing - always compatible ChromeDriver (new URLs)
+RUN wget -O /tmp/chrome-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/latest/linux64/chrome-linux64.zip && \
+    wget -O /tmp/chromedriver-linux64.zip https://storage.googleapis.com/chrome-for-testing-public/latest/linux64/chromedriver-linux64.zip && \
     unzip /tmp/chrome-linux64.zip -d /tmp/ && \
     unzip /tmp/chromedriver-linux64.zip -d /tmp/ && \
     mv /tmp/chrome-linux64/chrome /usr/local/bin/google-chrome && \
